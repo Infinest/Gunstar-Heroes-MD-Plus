@@ -1,9 +1,17 @@
+; Build params: ------------------------------------------------------------------------------
+JPROM	set 1
+
+	if	JPROM
+PAUSE_RESUME_FUNCTION	set $00000C8E
+	else
+PAUSE_RESUME_FUNCTION	set $00000C5C
+	endif
+
 ; Constants: ---------------------------------------------------------------------------------
 	MD_PLUS_OVERLAY_PORT:			equ $0003F7FA
 	MD_PLUS_CMD_PORT:				equ $0003F7FE
 	MD_PLUS_RESPONSE_PORT:			equ $0003F7FC
 
-	PAUSE_RESUME_FUNCTION:			equ	$00000C5C
 	PLAY_MUSIC_FUNCTION:			equ	$00065C56
 	FADE_OUT_MUSIC_FUNCTION:		equ	$000660DE
 	STOP_MUSIC_FUNCTION:			equ $0006621C
