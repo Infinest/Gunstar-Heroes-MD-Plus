@@ -1,11 +1,9 @@
-; Build params: ------------------------------------------------------------------------------
-CHEAT set 0
 ; Constants: ---------------------------------------------------------------------------------
 	MD_PLUS_OVERLAY_PORT:			equ $0003F7FA
 	MD_PLUS_CMD_PORT:				equ $0003F7FE
 	MD_PLUS_RESPONSE_PORT:			equ $0003F7FC
 
-	PAUSE_RESUME_FUNCTION:			equ	$C5C
+	PAUSE_RESUME_FUNCTION:			equ	$00000C5C
 	PLAY_MUSIC_FUNCTION:			equ	$00065C56
 	FADE_OUT_MUSIC_FUNCTION:		equ	$000660DE
 	STOP_MUSIC_FUNCTION:			equ $0006621C
@@ -18,7 +16,6 @@ CHEAT set 0
 
 	org PAUSE_RESUME_FUNCTION+$24
 	jmp		RESUME_DETOUR
-
 
 	org PLAY_MUSIC_FUNCTION
 	move.w	D7,D1
